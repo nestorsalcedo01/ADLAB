@@ -1,0 +1,35 @@
+{
+  "id": "012b25d8-db8c-4fa1-83ef-2ae1ed7004f7",
+  "name": "",
+  "project": "$GenApp_8bca7260-7a80-41d5-9b5a-14608e0d2bda",
+  "codeBlocksSequence": [
+    "Program:COBOL:LGACDB01 216 228"
+  ],
+  "codeBlocks": {
+    "Program:COBOL:LGACDB01 216 228": {
+      "program": {
+        "id": "Program:COBOL:LGACDB01",
+        "name": "Program:COBOL:LGACDB01",
+        "path": "enc:a7cbd343c412a2831175045d719ead261203af41f4de8dbaaf2215b8fda899aa5cb5fdfc23a337ed6845f5348996583214b13b3599166b0e248d3682d8221d9a77d5af5a54f818568d7c8c73fefc4702d3a6219cfb7e50c8",
+        "addedByUser": false
+      },
+      "stmtStartLineNumber": 216,
+      "stmtEndLineNumber": 228,
+      "code": "       Obtain-CUSTOMER-Number.\r\n\r\n           Exec CICS Get Counter(GENAcount)\r\n                         Pool(GENApool)\r\n                         Value(LastCustNum)\r\n                         Resp(WS-RESP)\r\n           End-Exec.\r\n           If WS-RESP Not = DFHRESP(NORMAL)\r\n             MOVE 'NO' TO LGAC-NCS\r\n             Initialize DB2-CUSTOMERNUM-INT\r\n           ELSE\r\n             Move LastCustNum  To DB2-CUSTOMERNUM-INT\r\n           End-If.",
+      "committed": false,
+      "references": [],
+      "uniqueId": "Program:COBOL:LGACDB01 216 228",
+      "usedParagraphs": [],
+      "usedCopybookParagraphs": [],
+      "tags": [
+        "paragraph",
+        "sliced"
+      ],
+      "metadata": {
+        "programs": [
+          "Program:COBOL:LGACDB01"
+        ]
+      }
+    }
+  }
+}
